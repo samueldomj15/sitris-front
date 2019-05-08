@@ -1,0 +1,78 @@
+<!-- Sidebar  -->
+<nav id="sidebar">
+    <div id="dismiss">
+        <i class="fa fa-times"></i>
+    </div>
+
+    <ul class="list-unstyled components">
+        <p>Módulos del sistema</p>
+        <li routerLinkActive="active">
+            <a routerLink="inicio"><i class="fa fa-home"></i> Inicio</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="recepcion" href="#recepcionSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle icon-toggle"><i class="fa fa-bell"></i> Recepción</a>
+            <ul class="collapse list-unstyled" id="recepcionSubmenu">
+                <li>
+                    <a href="#">Ingreso</a>
+                </li>
+                <li>
+                    <a href="#">Entrega</a>
+                </li>
+                <li>
+                    <a href="#">Cotización</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#cajaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle icon-toggle"><i class="fa fa-calculator icon"></i> Caja</a>
+            <ul class="collapse list-unstyled" id="cajaSubmenu">
+                <li>
+                    <a href="#">Pagos</a>
+                </li>
+                <li>
+                    <a href="#">Histórico</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#imagenSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle icon-toggle"><i class="fa fa-user-md"></i> Imagen</a>
+            <ul class="collapse list-unstyled" id="imagenSubmenu">
+                <li>
+                    <a href="#">Estudios</a>
+                </li>
+                <li>
+                    <a href="#">Interpretación</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-users"></i> Usuarios</a>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-info-circle"></i> Cuenta</a>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-database"></i> Base de datos</a>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-history"></i> Historia clínica</a>
+        </li>
+        <li>
+            <a href="#reportesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle icon-toggle"><i class="fa fa-file-text"></i> Reportes</a>
+            <ul class="collapse list-unstyled" id="reportesSubmenu">
+                <li>
+                    <a href="#">Ventas</a>
+                </li>
+                <li>
+                    <a href="#">Convenios</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><i class="fa fa-book"></i> Agenda</a>
+        </li>
+    </ul>
+
+</nav>
+
+<div class="overlay"></div>

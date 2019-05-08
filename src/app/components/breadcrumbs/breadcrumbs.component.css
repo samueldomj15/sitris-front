@@ -1,0 +1,29 @@
+/* ====================================================== 
+    Breadcrumbs 
+====================================================== */
+
+.bar-breadcrumb {
+    background: white;
+    padding: 15px 0;
+}
+
+.bar-breadcrumb ol {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.bar-breadcrumb h5 {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+.bar-breadcrumb .breadcrumb {
+    background: none;
+}
+
+.bar-breadcrumb__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

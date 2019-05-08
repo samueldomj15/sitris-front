@@ -1,0 +1,68 @@
+/* ====================================================== 
+    Modulos del Index 
+====================================================== */
+
+.module {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.module__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: calc((100% / 3) - 20px);
+    height: 150px;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--primary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.module__item .icon {
+    font-size: 46px;
+    text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+    .module__item .icon {
+        font-size: 36px;
+    }
+}
+
+.module__item:hover {
+    transform: scale(1.02, 1.02);
+    box-shadow: 0 5px 15px hsla(20, 0%, 80%, .15), 0 6px 6px hsla(15, 0%, 50%, .22);
+    text-decoration: none;
+    color: var(--primary);
+}
+
+@media screen and (max-width: 768px) {
+    .module__item {
+        width: calc((100% / 2) - 20px);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .module__item {
+        width: 100%;
+    }
+}
+
+.module__name {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+@media screen and (max-width: 768px) {
+    .module__name {
+        font-size: 20px;
+    }
+}
