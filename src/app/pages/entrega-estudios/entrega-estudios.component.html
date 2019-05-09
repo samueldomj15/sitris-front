@@ -1,0 +1,161 @@
+<div class="row mb-3">
+    <div class="col-6">
+        <span class="ml">Filtrar por: </span>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-primary">Todos</button>
+            <button type="button" class="btn btn-primary">Pendientes</button>
+            <button type="button" class="btn btn-primary">Entregados</button>
+        </div>
+    </div>
+</div>
+
+<section class="box-panel">
+    <div class="box-panel__body">
+        
+        <table #dataTable class="table table-hover" style="width:100%">
+            <thead class="thead-light">
+                <tr>
+                    <th>Cuenta</th>
+                    <th>Nombre del paciente</th>
+                    <th>ID Paciente</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Estatus de pago</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Carlos Daniel Díaz del Castillo</td>
+                    <td>003</td>
+                    <td>carlitosdiasdelcastillo@gmail.com</td>
+                    <td>7771234567</td>
+                    <td>Pagado</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target=".estudio-pagado-modal">Ver</button>
+                    </td>                                        
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Oscar Brito Juárez</td>
+                    <td>004</td>
+                    <td>oscar@gmail.com</td>
+                    <td>7778941563</td>
+                    <td>Abonado parcial, listo para ser entregado</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target=".estudio-abonadoP-modal">Ver</button>
+                    </td>                                        
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Guadalupe Victoria Escobedo</td>
+                    <td>005</td>
+                    <td>gudavices@hotmail.com</td>
+                    <td>7771112233</td>
+                    <td>Abonado</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target=".mensaje-modal">Ver</button>
+                    </td>                                        
+                </tr>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+
+    </div>
+</section>
+
+<!-- MODAL = "Estado: Pagado" -->
+<div class="modal fade estudio-pagado-modal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">SITD - Estudios del paciente disponibles</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover table-bordered" style="font-size: 15px">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Folio</th>
+                            <th scope="col">Nombre del estudio</th>
+                            <th scope="col">ID Estudio</th>
+                            <th scope="col">Partida</th>
+                            <th scope="col">Fecha y hora solicitud</th>
+                            <th scope="col">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Estudio general tomografía</td>
+                            <td>2</td>
+                            <td>11</td>
+                            <td>18/04/2019 <time>12:15:44</time></td>
+                            <td>Entregado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm">Reimprimir recibo</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL = "Estado: Abonado parcial, listo para ser entregado" -->
+<div class="modal fade estudio-abonadoP-modal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">SITD - Estudios del paciente disponibles</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Folio</th>
+                            <th scope="col">Nombre del estudio</th>
+                            <th scope="col">ID Estudio</th>
+                            <th scope="col">Partida</th>
+                            <th scope="col">Fecha y hora solicitud</th>
+                            <th scope="col">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Estudio general tomografía</td>
+                            <td>2</td>
+                            <td>11</td>
+                            <td>18/04/2019 <time>12:15:44</time></td>
+                            <td>
+                                Listo para entregar
+                                <a href="#" class="btn btn-outline-warning btn-sm"><i class="fa fa-file-text-o"></i></a>
+                                <a href="#" class="btn btn-outline-warning btn-sm"><i class="fa fa-download"></i></a>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox">
+                                </div>
+                            </td> 
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm">Entregar estudios</button>
+                <button type="button" class="btn btn-primary btn-sm">Reimprimir recibo</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

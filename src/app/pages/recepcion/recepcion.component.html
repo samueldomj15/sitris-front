@@ -1,40 +1,315 @@
-<table #dataTable class="table table-hover" style="width:100%">
-    <thead class="thead-light">
-        <tr>
-            <th>ID Paciente</th>
-            <th>Nombre</th>
-            <th>Teléfono</th>
-            <th>Fecha de nacimiento</th>
-            <th>Email</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Dayana Jaimes Salinas</td>
-            <td>7773601595</td>
-            <td>27/05/1996</td>
-            <td>dayana_jaimes@gmail.com</td>
-            <td><a href="#" class="btn btn-outline-warning btn-sm">Ver</a></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Carlos Daniel Díaz del Castillo</td>
-            <td>7779845685</td>
-            <td>11/04/199</td>
-            <td>carlitos@gmail.com</td>
-            <td><a href="#" class="btn btn-outline-warning btn-sm">Ver</a></td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Valeria Becerra</td>
-            <td>772985412</td>
-            <td>24/08/199</td>
-            <td>valbecerra@gmail.com</td>
-            <td><a href="#" class="btn btn-outline-warning btn-sm">Ver</a></td>
-        </tr>
-    </tbody>
-    <tfoot>
-    </tfoot>
-</table>
+<div class="row mb-3">
+    <div class="col-6">
+        <a routerLink="/alta-paciente" class="btn btn-primary">Agregar paciente</a>
+        <a routerLink="/entrega-estudios" class="btn btn-outline-primary mx-2">Entregar estudios</a>
+        <a href="#" class="btn btn-outline-primary">Cotización</a>
+    </div>
+</div>
+
+<section class="box-panel">
+    <div class="box-panel__body">
+        
+        <table #dataTable class="table table-hover" style="width:100%">
+            <thead class="thead-light">
+                <tr>
+                    <th>ID Paciente</th>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Email</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Dayana Jaimes Salinas</td>
+                    <td>7773601595</td>
+                    <td>27/05/1996</td>
+                    <td>dayana_jaimes@gmail.com</td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target=".datos-paciente-modal">Ver</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Carlos Daniel Díaz del Castillo</td>
+                    <td>7779845685</td>
+                    <td>11/04/199</td>
+                    <td>carlitos@gmail.com</td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target=".datos-paciente-modal">Ver</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Valeria Becerra</td>
+                    <td>772985412</td>
+                    <td>24/08/199</td>
+                    <td>valbecerra@gmail.com</td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target=".datos-paciente-modal">Ver</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+
+    </div>
+</section>
+
+<!-- Modal datos del paciente -->
+<div class="modal fade datos-paciente-modal">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Datos del paciente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="accordion" id="accordionExample">
+                    <form action="" class="form-container">
+                        <div class="card">
+                            <div class="card-header btn btn-link text-left collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Información del paciente
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-12 col-md-6 col-lg-3">
+                                            <label for="inputPrimerNombre">Primer nombre</label>
+                                            <input type="text" class="form-control" value="Dayana" id="inputPrimerNombre" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3">
+                                            <label for="inputSegundoNombre">Segundo nombre</label>
+                                            <input type="text" class="form-control" value="Lizeth" id="inputSegundoNombre" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3">
+                                            <label for="inputPrimerApellido">Primer apellido</label>
+                                            <input type="text" class="form-control" value="Jaimes" id="inputPrimerApellido" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3">
+                                            <label for="inputSegundoApellido">Segundo apellido</label>
+                                            <input type="text" class="form-control" value="Salinas" id="inputSegundoApellido" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3">
+                                            <label for="inputRFC">RFC*</label>
+                                            <input type="text" class="form-control" value="" id="inputRFC" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3">
+                                            <label for="inputCURP">CURP</label>
+                                            <input type="text" class="form-control" value="" id="inputCURP" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3">
+                                            <label for="inputFechaNacimiento">Fecha de nacimiento</label>
+                                            <input type="date" class="form-control" value="1996-05-27" id="inputFechaNacimiento" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3">
+                                            <label for="inputEdad">Edad</label>
+                                            <input type="text" class="form-control" value="23" id="inputEdad" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-4">
+                                            <label for="inputSexo">Sexo</label>
+                                            <select id="inputSexo" class="form-control" readonly disabled>
+                                                <option>Masculino</option>
+                                                <option selected>Femenino</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-4">
+                                            <label for="inputTipoSangre">Tipo de sangre</label>
+                                            <select id="inputTipoSangre" class="form-control" readonly disabled>
+                                                <option>Desconocido</option>
+                                                <option>O Negativo</option>
+                                                <option selected>O Positivo</option>
+                                                <option>A Negativo</option>
+                                                <option>A Positivo</option>
+                                                <option>B Negativo</option>
+                                                <option>B Positivo</option>
+                                                <option>AB Negativo</option>
+                                                <option>AB Positivo</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-4">
+                                            <label for="inputNacionalidad">Nacionalidad</label>
+                                            <input type="text" class="form-control" value="" id="inputNacionalidad" readonly disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header btn btn-link text-left collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Información de contacto
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-12 col-md-6">
+                                            <label for="inputEmail">Email</label>
+                                            <input type="email" class="form-control" value="dayanaja@gmail.com" id="inputEmail" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6">
+                                            <label for="inputTel">Teléfono</label>
+                                            <input type="tel" class="form-control" value="7779874561" id="inputTel" readonly disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header btn btn-link text-left collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Dirección de contacto
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-12 col-md-6 col-lg-3">
+                                            <label for="inputCalle">Calle</label>
+                                            <input type="text" class="form-control" value="Nicolas Bravo" id="inputCalle" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3">
+                                            <label for="inputNumExt">Número exterior</label>
+                                            <input type="text" class="form-control" value="8" id="inputNumExt" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3">
+                                            <label for="inputNumInt">Número interior</label>
+                                            <input type="text" class="form-control" value="S/N" id="inputNumInt" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3">
+                                            <label for="inputCp">Código postal</label>
+                                            <input type="text" class="form-control" value="62776" id="inputCp" readonly disabled>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
+                                            <label for="inputEstado">Estado</label>
+                                            <select id="inputEstado" class="form-control" readonly disabled>
+                                                <option>Elegir</option>
+                                                <option selected>Morelos</option>
+                                                <option>Oaxaca</option>
+                                                <option>Puebla</option>
+                                                <option>Chiapas</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
+                                            <label for="inputDelegacion">Delegación o municipio</label>
+                                            <select id="inputDelegacion" class="form-control" readonly disabled>
+                                                <option>Elegir</option>
+                                                <option selected>Tlaltizapán</option>
+                                                <option>...</option>
+                                                <option>...</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
+                                            <label for="inputColonia">Colonia</label>
+                                            <select id="inputColonia" class="form-control" readonly disabled>
+                                                <option>Elegir</option>
+                                                <option>Tlaltizapán</option>
+                                                <option>San Miguel 30</option>
+                                                <option>Santa Rosa 30</option>
+                                                <option>Otilio</option>
+                                                <option selected>El mirador</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header btn btn-link text-left collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Convenio de la institución
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-12">
+                                            <label for="inputConvenio">Convenio</label>
+                                            <select id="inputConvenio" class="form-control" readonly disabled>
+                                                <option>Elegir</option>
+                                                <option>...</option>
+                                                <option>...</option>
+                                                <option>...</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header btn btn-link text-left collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                Lista de cuentas
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <table class="table table-hover table-bordered" style="font-size: 15px">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th scope="col">Folio</th>
+                                                <th scope="col">Estado de pago</th>
+                                                <th scope="col">Estado</th>
+                                                <th scope="col">Fecha y hora</th>
+                                                <th scope="col">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">0001</th>
+                                                <td>Cuenta pagada</td>
+                                                <td>Cuenta cerrada</td>
+                                                <td>18/04/2019 <time>12:15:44</time></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="datos-paciente-modal"><i class="fa fa-file-text-o"></i>
+                                                        Ver
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary btn-sm">Crear nueva cuenta</a>
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".crear-cita-modal">Crear cita</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal crear cita -->
+<div class="modal fade crear-cita-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="crear-cita-modal">Seleccione horario de la cita</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" class="form-container">
+                    <div class="form-row">
+                        <div class="form-group col-12 col-md-6">
+                            <label for="inputFechaCita">Fecha cita</label>
+                            <input type="date" class="form-control" id="inputFechaCita">
+                        </div>
+                        <div class="form-group col-12 col-md-6">
+                            <label for="inputHoraCita">Hora cita</label>
+                            <input type="time" class="form-control" id="inputHoraCita">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm">Agendar</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

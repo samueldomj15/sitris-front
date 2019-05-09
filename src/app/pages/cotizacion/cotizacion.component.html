@@ -1,0 +1,115 @@
+<section class="box-panel mb-5">            
+    <div class="box-panel__header">
+        <div class="row">
+            <div class="col-auto d-flex align-items-center">
+                <img src="assets/img/logo-marca.png" width="120" alt="Logo corporativo">
+                <p class="h5 ml-3">WOLF EHC MX 2, <small>Sucursal:</small> MATRIZ</p>
+            </div>
+            <div class="col-auto ml-auto">
+                <p>Fecha y hora de emisión</p>
+                <p><small>04/20/2019 09:38</small></p>
+            </div>
+        </div>
+    </div>
+    <div class="box-panel__body">
+        <form class="form-container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h6 class="box-panel__divider-title">Datos del paciente</h6>
+                    <div class="box-panel__divider"></div>
+                    <div class="form-group">
+                        <label for="inputNombrePacienteCotizacion">Nombre del paciente</label>
+                        <input type="text" class="form-control" id="inputNombrePacienteCotizacion">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <h6 class="box-panel__divider-title">Datos del recepcionista</h6>
+                    <div class="box-panel__divider"></div>
+                    <div class="form-group">
+                        <label for="inputNombreRecepcionistaCotizacion">Nombre del recepcionista</label>
+                        <input type="text" class="form-control" value="Soporte" id="inputNombreRecepcionistaCotizacion" readonly disabled>
+                    </div>
+                </div>
+            </div>
+            
+            <h6 class="box-panel__divider-title">Comentario / Observaciones clínicas</h6>
+            <div class="box-panel__divider"></div>
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label for="inputComentario">Escriba aquí su comentario</label>
+                    <textarea class="form-control" id="inputComentario"></textarea>
+                </div>
+
+                <div class="col-12">
+                    <table class="table table-hover table-bordered" style="font-size: 15px">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Unidad</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Instrucciones</th>
+                                <th scope="col">Precio unitario</th>
+                                <th scope="col">Descuento</th>
+                                <th scope="col">Importe</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <input type="text" class="form-control" value="1" style="width: 80px">
+                                </th>
+                                <td>Estudio de imagen</td>
+                                <td>AP de brazo</td>
+                                <td>...</td>
+                                <td>$200.00</td>
+                                <td>
+                                    <select id="inputDcto." class="form-control">
+                                        <option>No</option>
+                                        <option>10%</option>
+                                    </select>
+                                </td>
+                                <td>$200.00</td>
+                                <td><a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <input type="text" class="form-control" value="1" style="width: 80px">
+                                </th>
+                                <td>Estudio de imagen</td>
+                                <td>
+                                    AP de brazo
+                                    <div style="font-size: 12px;" class="text-success">*Descuento del 10% en Estudios de Imagen</div>
+                                </td>
+                                <td>...</td>
+                                <td>$200.00</td>
+                                <td>
+                                    <select id="inputDcto." class="form-control">
+                                        <option>No</option>
+                                        <option selected>10%</option>
+                                    </select>
+                                </td>
+                                <td>$200.00</td>
+                                <td><a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5">
+                                    <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target=".lista-estudios-modal">Agregar estudios</button>
+                                </td>
+                                <td class="table-active"><small>Total: </small></td>
+                                <td class="table-secondary">$400.00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>                               
+            <div class="d-flex">
+                <div class="mx-auto">
+                    <a href="#" class="btn btn-primary">Imprimir cotización</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

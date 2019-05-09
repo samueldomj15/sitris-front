@@ -1,0 +1,287 @@
+<section class="box-panel">
+    <div class="box-panel__body">
+
+        <div class="accordion" id="accordionExample">
+            <form class="form-container">
+                <div class="card">
+                    <div class="card-header btn btn-link text-left collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Información del paciente
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputPrimerNombre">Primer nombre*</label>
+                                    <input type="text" class="form-control" id="inputPrimerNombre">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputSegundoNombre">Segundo nombre</label>
+                                    <input type="text" class="form-control" id="inputSegundoNombre">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputPrimerApellido">Primer apellido*</label>
+                                    <input type="text" class="form-control" id="inputPrimerApellido">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputSegundoApellido">Segundo apellido</label>
+                                    <input type="text" class="form-control" id="inputSegundoApellido">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputRFC">RFC*</label>
+                                    <input type="text" class="form-control" id="inputRFC">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputCURP">CURP</label>
+                                    <input type="text" class="form-control" id="inputCURP">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputFechaNacimiento">Fecha de nacimiento*</label>
+                                    <input type="date" class="form-control" id="inputFechaNacimiento">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputEdad">Edad*</label>
+                                    <input type="text" class="form-control" id="inputEdad">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-4">
+                                    <label for="inputSexo">Sexo</label>
+                                    <select id="inputSexo" class="form-control">
+                                        <option>Masculino</option>
+                                        <option>Femenino</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-4">
+                                    <label for="inputTipoSangre">Tipo de sangre</label>
+                                    <select id="inputTipoSangre" class="form-control">
+                                        <option>Desconocido</option>
+                                        <option>O Negativo</option>
+                                        <option>O Positivo</option>
+                                        <option>A Negativo</option>
+                                        <option>A Positivo</option>
+                                        <option>B Negativo</option>
+                                        <option>B Positivo</option>
+                                        <option>AB Negativo</option>
+                                        <option>AB Positivo</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-4">
+                                    <label for="inputNacionalidad">Nacionalidad</label>
+                                    <input type="text" class="form-control" id="inputNacionalidad">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header btn btn-link text-left collapsed" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Información de contacto
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-12 col-md-6">
+                                    <label for="inputEmail">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail">
+                                </div>
+                                <div class="form-group col-12 col-md-6">
+                                    <label for="inputTel">Teléfono*</label>
+                                    <input type="tel" class="form-control" id="inputTel" placeholder="10 Digitos" maxlength="10">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header btn btn-link text-left collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Dirección de contacto
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputCalle">Calle*</label>
+                                    <input type="text" class="form-control" id="inputCalle">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputNumExt">Número exterior*</label>
+                                    <input type="text" class="form-control" id="inputNumExt">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputNumInt">Número interior</label>
+                                    <input type="text" class="form-control" id="inputNumInt">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputCp">Código postal*</label>
+                                    <input type="text" class="form-control" id="inputCp">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
+                                    <label for="inputEstado">Estado*</label>
+                                    <select id="inputEstado" class="form-control">
+                                        <option>Elegir</option>
+                                        <option>Morelos</option>
+                                        <option>Oaxaca</option>
+                                        <option>Puebla</option>
+                                        <option>Chiapas</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
+                                    <label for="inputDelegacion">Delegación o municipio*</label>
+                                    <select id="inputDelegacion" class="form-control">
+                                        <option>Elegir</option>
+                                        <option>...</option>
+                                        <option>...</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
+                                    <label for="inputColonia">Colonia*</label>
+                                    <select id="inputColonia" class="form-control">
+                                        <option>Elegir</option>
+                                        <option>Tlaltizapán</option>
+                                        <option>San Miguel 30</option>
+                                        <option>Santa Rosa 30</option>
+                                        <option>Otilio</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header btn btn-link text-left collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Convenio de la institución
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="inputConvenio">Convenio</label>
+                                    <select id="inputConvenio" class="form-control">
+                                        <option>Elegir</option>
+                                        <option>...</option>
+                                        <option>...</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header btn btn-link text-left collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Facturación
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-auto">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="checkboxFacturacion" value="facturacion">
+                                        <label class="form-check-label" for="checkboxFacturacion">Requiero facturación</label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-auto">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="checkboxMismosDatos" value="mismoDatos">
+                                        <label class="form-check-label" for="checkboxMismosDatos">Utilizar mismos datos</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputCalleFac">Calle*</label>
+                                    <input type="text" class="form-control" id="inputCalleFac">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputNumExtFac">Numero exterior*</label>
+                                    <input type="text" class="form-control" id="inputNumExtFac">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3 col-xl-3">
+                                    <label for="inputNumIntFac">Numero interior</label>
+                                    <input type="text" class="form-control" id="inputNumIntFac">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3 col-xl-3">
+                                    <label for="inputCpFac">Código postal*</label>
+                                    <input type="text" class="form-control" id="inputCpFac">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
+                                    <label for="inputEstadoFac">Estado*</label>
+                                    <select id="inputEstadoFac" class="form-control">
+                                        <option>Elegir</option>
+                                        <option>Morelos</option>
+                                        <option>Oaxaca</option>
+                                        <option>Puebla</option>
+                                        <option>Chiapas</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
+                                    <label for="inputDelegacionFac">Delegación o municipio*</label>
+                                    <select id="inputDelegacionFac" class="form-control">
+                                        <option>Elegir</option>
+                                        <option>...</option>
+                                        <option>...</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
+                                    <label for="inputColoniaFac">Colonia*</label>
+                                    <select id="inputColoniaFac" class="form-control">
+                                        <option>Elegir</option>
+                                        <option>Tlaltizapán</option>
+                                        <option>San Miguel 30</option>
+                                        <option>Santa Rosa 30</option>
+                                        <option>Otilio</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="box-panel__divider"></div>
+                            <div class="form-row">
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputNombreFac">Nombre completo del contacto*</label>
+                                    <input type="text" class="form-control" id="inputNombreFac">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputEmailFac">Email de contacto</label>
+                                    <input type="email" class="form-control" id="inputEmailFac">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputTelFac">Teléfono*</label>
+                                    <input type="tel" class="form-control" id="inputTelFac">
+                                </div>
+                                <div class="form-group col-12 col-md-6 col-lg-3">
+                                    <label for="inputExtencionFac">Extención</label>
+                                    <input type="text" class="form-control" id="inputExtencionFac">
+                                </div>
+                                <div class="form-group col-12 col-md-6">
+                                    <label for="inputTipoTelFac">Tipo telefonia</label>
+                                    <select id="inputTipoTelFac" class="form-control">
+                                        <option>Elegir</option>
+                                        <option>Fijo</option>
+                                        <option>Movil</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12 col-md-6">
+                                    <label for="inputLocalizacionFac">Localización</label>
+                                    <select id="inputLocalizacionFac" class="form-control">
+                                        <option>Elegir</option>
+                                        <option>Local</option>
+                                        <option>Foráneo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-primary btn-block">Guardar paciente</button>
+                    </div>
+                    <div class="col-6">
+                        <a href="#" class="btn btn-primary btn-block">Asignar doctor</a>
+                    </div>
+                </div>
+            </form>
+        </div>    
+
+    </div>
+</section>

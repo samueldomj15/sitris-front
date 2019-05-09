@@ -35,7 +35,63 @@ p {
     margin: 0;
 }
 
+table {
+    font-size: 14px;
+}
+
 .header {
     margin-bottom: 40px;
 }
 
+.container-fluid {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+
+/* Formularios */
+
+.form-container label {
+    font-size: 14px;
+}
+
+.modal-xl {
+    max-width: 1140px;
+}
+
+@media screen and (max-width: 992px) {
+    .modal-xl {
+        max-width: 800px;
+    }
+}
+
+
+/* box panel */
+
+.box-panel {
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10), 0 1px 2px rgba(0, 0, 0, 0.12);
+    border-top: 3px solid #2e6d9e;
+    border-radius: 3px;
+}
+
+.box-panel__header {
+    padding: 10px 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    background: white;
+}
+
+.box-panel__body {
+    padding: 18px 15px;
+    background: white;
+}
+
+.box-panel__divider {
+    margin: 0.8rem 0;
+    border-bottom: 1.4px dotted rgba(70, 100, 129, 0.98);
+}
+
+.box-panel__divider-title {
+    color: #2e6d9e;
+    font-size: 17px;
+}

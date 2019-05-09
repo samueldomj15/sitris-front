@@ -1,15 +1,16 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 import * as $ from 'jquery';
 import 'datatables.net';
 import 'datatables.net-bs4';
 
 @Component({
-  selector: 'app-recepcion',
-  templateUrl: './recepcion.component.html',
-  styleUrls: ['./recepcion.component.css']
+  selector: 'app-entrega-estudios',
+  templateUrl: './entrega-estudios.component.html',
+  styleUrls: ['./entrega-estudios.component.css']
 })
-export class RecepcionComponent implements OnInit {
+export class EntregaEstudiosComponent implements OnInit {
+
   @ViewChild('dataTable') table: ElementRef;
 
   dataTable: any;

@@ -13,6 +13,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 import { ModulosComponent } from './pages/modulos/modulos.component';
 import { RecepcionComponent } from './pages/recepcion/recepcion.component';
+import { AltaPacienteComponent } from './pages/alta-paciente/alta-paciente.component';
+import { EntregaEstudiosComponent } from './pages/entrega-estudios/entrega-estudios.component';
+import { CotizacionComponent } from './pages/cotizacion/cotizacion.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { RecepcionComponent } from './pages/recepcion/recepcion.component';
     BreadcrumbsComponent,
     ModulosComponent,
     RecepcionComponent,
+    AltaPacienteComponent,
+    EntregaEstudiosComponent,
+    CotizacionComponent,
   ],
   imports: [
     BrowserModule,
