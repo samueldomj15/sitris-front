@@ -32,20 +32,11 @@ export class RecepcionComponent implements OnInit {
           "next":       "Siguiente",
           "previous":   "Anterior"
         }
-      }
-      
+      }      
     }
 
     this.dataTable = $(this.table.nativeElement);
     this.dataTable.dataTable(this.dtOption);
   }
-
-  // dataTable: any;
-
-  // ngOnInit() {
-  //   // Se usa DataTable Jquery - cambiar la etiqueta table por un clase
-  //   const table: any = $('table');
-  //   this.dataTable = table.DataTable();
-  // }
 
 }
