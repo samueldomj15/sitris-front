@@ -2,7 +2,7 @@
     <div class="box-panel__body">
 
         <div class="accordion" id="accordionExample">
-            <form class="form-container">
+            <form class="form-container" [formGroup]="forma" (ngSubmit)="guardarCambios()">
                 <div class="card">
                     <div class="card-header btn btn-link text-left collapsed" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Información del paciente
@@ -11,61 +11,69 @@
                         <div class="card-body">
                             <div class="form-row">
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputPrimerNombre">Primer nombre*</label>
-                                    <input type="text" class="form-control" id="inputPrimerNombre">
+                                    <label>Primer nombre*</label>
+                                    <input type="text" formControlName="name" class="form-control" [ngClass]="{'is-invalid': (!forma.get('name').valid) && forma.get('name').touched}">
+                                    <div class="invalid-feedback" *ngIf="forma.controls['name'].errors?.required">
+                                        Este campo es obligatorio*
+                                    </div>
+                                    <div class="invalid-feedback" *ngIf="forma.controls['name'].errors?.minlength">
+                                        Por lo menos 3 caracteres*
+                                    </div>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputSegundoNombre">Segundo nombre</label>
-                                    <input type="text" class="form-control" id="inputSegundoNombre">
+                                    <label>Segundo nombre</label>
+                                    <input type="text" formControlName="secondName" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputPrimerApellido">Primer apellido*</label>
-                                    <input type="text" class="form-control" id="inputPrimerApellido">
+                                    <label>Primer apellido*</label>
+                                    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{'is-invalid': (!forma.get('lastName').valid) && forma.get('lastName').touched}">
+                                    <div class="invalid-feedback" *ngIf="forma.controls['lastName'].errors?.required">
+                                        Este campo es obligatorio*
+                                    </div>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputSegundoApellido">Segundo apellido</label>
-                                    <input type="text" class="form-control" id="inputSegundoApellido">
+                                    <label>Segundo apellido</label>
+                                    <input type="text" formControlName="secondLastName" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputRFC">RFC*</label>
-                                    <input type="text" class="form-control" id="inputRFC">
+                                    <label>RFC</label>
+                                    <input type="text" formControlName="rfc" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputCURP">CURP</label>
-                                    <input type="text" class="form-control" id="inputCURP">
+                                    <label>CURP</label>
+                                    <input type="text" formControlName="curp" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputFechaNacimiento">Fecha de nacimiento*</label>
-                                    <input type="date" class="form-control" id="inputFechaNacimiento">
+                                    <label>Fecha de nacimiento*</label>
+                                    <input type="date" formControlName="birth" class="form-control" [ngClass]="{'is-invalid': (!forma.get('birth').valid) && forma.get('birth').touched}">
+                                    <div class="invalid-feedback" *ngIf="forma.controls['birth'].errors?.required">
+                                        Este campo es obligatorio*
+                                    </div>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputEdad">Edad*</label>
-                                    <input type="text" class="form-control" id="inputEdad">
+                                    <label>Edad*</label>
+                                    <input type="text" formControlName="age" class="form-control" [ngClass]="{'is-invalid': (!forma.get('age').valid) && forma.get('age').touched}">
+                                    <div class="invalid-feedback" *ngIf="forma.controls['age'].errors?.required">
+                                        Este campo es obligatorio*
+                                    </div>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-4">
-                                    <label for="inputSexo">Sexo</label>
-                                    <select id="inputSexo" class="form-control">
-                                        <option>Masculino</option>
-                                        <option>Femenino</option>
+                                    <label>Sexo</label>
+                                    <select class="form-control" formControlName="gender">
+                                        <option value="">Seleccionar genero</option>
+                                        <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-4">
-                                    <label for="inputTipoSangre">Tipo de sangre</label>
-                                    <select id="inputTipoSangre" class="form-control">
-                                        <option>Desconocido</option>
-                                        <option>O Negativo</option>
-                                        <option>O Positivo</option>
-                                        <option>A Negativo</option>
-                                        <option>A Positivo</option>
-                                        <option>B Negativo</option>
-                                        <option>B Positivo</option>
-                                        <option>AB Negativo</option>
-                                        <option>AB Positivo</option>
+                                    <label>Tipo de sangre</label>
+                                    <select class="form-control" formControlName="blood">
+                                        <option value="">Seleccionar</option>
+                                        <option *ngFor="let bloodType of bloodTypes" [value]="bloodType">{{bloodType}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-4">
-                                    <label for="inputNacionalidad">Nacionalidad</label>
-                                    <input type="text" class="form-control" id="inputNacionalidad">
+                                    <label>Nacionalidad</label>
+                                    <input type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -79,12 +87,18 @@
                         <div class="card-body">
                             <div class="form-row">
                                 <div class="form-group col-12 col-md-6">
-                                    <label for="inputEmail">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail">
+                                    <label>Email</label>
+                                    <input type="email" formControlName="email" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6">
-                                    <label for="inputTel">Teléfono*</label>
-                                    <input type="tel" class="form-control" id="inputTel" placeholder="10 Digitos" maxlength="10">
+                                    <label>Teléfono*</label>
+                                    <input type="tel" formControlName="phone" class="form-control" placeholder="10 Digitos" maxlength="10" [ngClass]="{'is-invalid': (!forma.get('phone').valid) && forma.get('phone').touched}">
+                                    <div class="invalid-feedback" *ngIf="forma.controls['phone'].errors?.required">
+                                        Este campo es obligatorio*
+                                    </div>
+                                    <div class="invalid-feedback" *ngIf="forma.controls['phone'].errors?.minlength">
+                                        Debe colocar 10 digitos*
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -96,26 +110,36 @@
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
-                            <div class="form-row">
+                            <div class="form-row" formGroupName="address">
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputCalle">Calle*</label>
-                                    <input type="text" class="form-control" id="inputCalle">
+                                    <label>Calle*</label>
+                                    <!-- [ngClass]="{'is-invalid': (!forma.get('phone').valid) && forma.get('phone').touched}" -->
+                                    <input type="text" formControlName="street" class="form-control" [ngClass]="{'is-invalid': (!forma.get('address.street').valid) && forma.get('address.street').touched}">
+                                    <div class="invalid-feedback" *ngIf="forma.get('address.street').errors?.required">
+                                        Este campo es obligatorio*
+                                    </div>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputNumExt">Número exterior*</label>
-                                    <input type="text" class="form-control" id="inputNumExt">
+                                    <label>Número exterior*</label>
+                                    <input type="text" formControlName="outdoor" class="form-control" [ngClass]="{'is-invalid': (!forma.get('address.outdoor').valid) && forma.get('address.outdoor').touched}">
+                                    <div class="invalid-feedback" *ngIf="forma.get('address.outdoor').errors?.required">
+                                        Este campo es obligatorio*
+                                    </div>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputNumInt">Número interior</label>
-                                    <input type="text" class="form-control" id="inputNumInt">
+                                    <label>Número interior</label>
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputCp">Código postal*</label>
-                                    <input type="text" class="form-control" id="inputCp">
+                                    <label>Código postal*</label>
+                                    <input type="text" formControlName="zipcode" class="form-control" [ngClass]="{'is-invalid': (!forma.get('address.zipcode').valid) && forma.get('address.zipcode').touched}">
+                                    <div class="invalid-feedback" *ngIf="forma.get('address.zipcode').errors?.required">
+                                        Este campo es obligatorio*
+                                    </div>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
-                                    <label for="inputEstado">Estado*</label>
-                                    <select id="inputEstado" class="form-control">
+                                    <label>Estado*</label>
+                                    <select class="form-control">
                                         <option>Elegir</option>
                                         <option>Morelos</option>
                                         <option>Oaxaca</option>
@@ -124,8 +148,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
-                                    <label for="inputDelegacion">Delegación o municipio*</label>
-                                    <select id="inputDelegacion" class="form-control">
+                                    <label>Delegación o municipio*</label>
+                                    <select class="form-control">
                                         <option>Elegir</option>
                                         <option>...</option>
                                         <option>...</option>
@@ -133,8 +157,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
-                                    <label for="inputColonia">Colonia*</label>
-                                    <select id="inputColonia" class="form-control">
+                                    <label>Colonia*</label>
+                                    <select class="form-control">
                                         <option>Elegir</option>
                                         <option>Tlaltizapán</option>
                                         <option>San Miguel 30</option>
@@ -154,8 +178,8 @@
                         <div class="card-body">
                             <div class="form-row">
                                 <div class="form-group col-12">
-                                    <label for="inputConvenio">Convenio</label>
-                                    <select id="inputConvenio" class="form-control">
+                                    <label>Convenio</label>
+                                    <select class="form-control">
                                         <option>Elegir</option>
                                         <option>...</option>
                                         <option>...</option>
@@ -175,37 +199,37 @@
                             <div class="form-row">
                                 <div class="form-group col-auto">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="checkboxFacturacion" value="facturacion">
-                                        <label class="form-check-label" for="checkboxFacturacion">Requiero facturación</label>
+                                        <input class="form-check-input" type="checkbox" value="facturacion">
+                                        <label class="form-check-label">Requiero facturación</label>
                                     </div>
                                 </div>
                                 <div class="form-group col-auto">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="checkboxMismosDatos" value="mismoDatos">
-                                        <label class="form-check-label" for="checkboxMismosDatos">Utilizar mismos datos</label>
+                                        <input class="form-check-input" type="checkbox" value="mismoDatos">
+                                        <label class="form-check-label">Utilizar mismos datos</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputCalleFac">Calle*</label>
-                                    <input type="text" class="form-control" id="inputCalleFac">
+                                    <label>Calle*</label>
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputNumExtFac">Numero exterior*</label>
-                                    <input type="text" class="form-control" id="inputNumExtFac">
+                                    <label>Numero exterior*</label>
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3 col-xl-3">
-                                    <label for="inputNumIntFac">Numero interior</label>
-                                    <input type="text" class="form-control" id="inputNumIntFac">
+                                    <label>Numero interior</label>
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3 col-xl-3">
-                                    <label for="inputCpFac">Código postal*</label>
-                                    <input type="text" class="form-control" id="inputCpFac">
+                                    <label>Código postal*</label>
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
-                                    <label for="inputEstadoFac">Estado*</label>
-                                    <select id="inputEstadoFac" class="form-control">
+                                    <label>Estado*</label>
+                                    <select class="form-control">
                                         <option>Elegir</option>
                                         <option>Morelos</option>
                                         <option>Oaxaca</option>
@@ -214,8 +238,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
-                                    <label for="inputDelegacionFac">Delegación o municipio*</label>
-                                    <select id="inputDelegacionFac" class="form-control">
+                                    <label>Delegación o municipio*</label>
+                                    <select class="form-control">
                                         <option>Elegir</option>
                                         <option>...</option>
                                         <option>...</option>
@@ -223,8 +247,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3 col-xl-4">
-                                    <label for="inputColoniaFac">Colonia*</label>
-                                    <select id="inputColoniaFac" class="form-control">
+                                    <label>Colonia*</label>
+                                    <select class="form-control">
                                         <option>Elegir</option>
                                         <option>Tlaltizapán</option>
                                         <option>San Miguel 30</option>
@@ -236,32 +260,32 @@
                             <div class="box-panel__divider"></div>
                             <div class="form-row">
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputNombreFac">Nombre completo del contacto*</label>
-                                    <input type="text" class="form-control" id="inputNombreFac">
+                                    <label>Nombre completo del contacto*</label>
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputEmailFac">Email de contacto</label>
-                                    <input type="email" class="form-control" id="inputEmailFac">
+                                    <label>Email de contacto</label>
+                                    <input type="email" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputTelFac">Teléfono*</label>
-                                    <input type="tel" class="form-control" id="inputTelFac">
+                                    <label>Teléfono*</label>
+                                    <input type="tel" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6 col-lg-3">
-                                    <label for="inputExtencionFac">Extención</label>
-                                    <input type="text" class="form-control" id="inputExtencionFac">
+                                    <label>Extención</label>
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class="form-group col-12 col-md-6">
-                                    <label for="inputTipoTelFac">Tipo telefonia</label>
-                                    <select id="inputTipoTelFac" class="form-control">
+                                    <label>Tipo telefonia</label>
+                                    <select class="form-control">
                                         <option>Elegir</option>
                                         <option>Fijo</option>
                                         <option>Movil</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-12 col-md-6">
-                                    <label for="inputLocalizacionFac">Localización</label>
-                                    <select id="inputLocalizacionFac" class="form-control">
+                                    <label>Localización</label>
+                                    <select class="form-control">
                                         <option>Elegir</option>
                                         <option>Local</option>
                                         <option>Foráneo</option>
@@ -274,12 +298,15 @@
 
                 <div class="row mt-3">
                     <div class="col-6">
-                        <button type="submit" class="btn btn-primary btn-block">Guardar paciente</button>
+                        <!-- [disabled]="!forma.valid" -->
+                        <button type="submit"  class="btn btn-primary btn-block">Guardar paciente</button>
                     </div>
                     <div class="col-6">
                         <a href="#" class="btn btn-primary btn-block">Asignar doctor</a>
                     </div>
                 </div>
+
+                <pre>{{ forma.valid }}</pre> <br>
             </form>
         </div>    
 
